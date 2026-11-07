@@ -1,0 +1,1008 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rydia Mobility and Loans Ltd</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f4f6f9;
+  color: #222;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+header {
+  background: linear-gradient(135deg,#082d49,#1476ad);
+  color: white;
+  text-align: center;
+  padding: 40px 15px;
+}
+
+header h1 {
+  font-size: 27px;
+  margin-bottom: 12px;
+}
+
+header p {
+  line-height: 1.8;
+}
+
+.badge {
+  display: inline-block;
+  background: #ffc107;
+  color: #222;
+  padding: 6px 12px;
+  border-radius: 20px;
+  margin: 8px 3px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.container {
+  max-width: 1050px;
+  margin: auto;
+  padding: 20px 15px;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 3px 15px #00000012;
+  margin-bottom: 25px;
+}
+
+h2 {
+  color: #0a3d62;
+  border-bottom: 2px solid #0a3d62;
+  padding-bottom: 10px;
+  margin-bottom: 18px;
+}
+
+h3 {
+  color: #0a3d62;
+  margin: 20px 0 10px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin: 12px 0 6px;
+  font-size: 14px;
+}
+
+input,select,textarea {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #1476ad;
+}
+
+button {
+  background: #0a3d62;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 15px;
+  margin-top: 15px;
+}
+
+button:hover {
+  background: #1476ad;
+}
+
+button:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+}
+
+.gold {
+  background: #ffc107;
+  color: #222;
+}
+
+.whatsapp {
+  background: #25D366;
+}
+
+.result,.success,.error {
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 15px;
+  display: none;
+}
+
+.result,.success {
+  background: #e8f5e9;
+  color: #155724;
+}
+
+.error {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.verify-box {
+  border: 2px dashed #0a3d62;
+  background: #f8f9fa;
+  padding: 18px;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+.verify-status {
+  margin-top: 12px;
+  padding: 12px;
+  background: #e9ecef;
+  border-radius: 7px;
+  font-size: 14px;
+}
+
+.valid {
+  border: 2px solid green;
+}
+
+.invalid {
+  border: 2px solid red;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+th,td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background: #0a3d62;
+  color: white;
+}
+
+.footer {
+  background: #082d49;
+  color: white;
+  text-align: center;
+  padding: 25px;
+  line-height: 1.8;
+}
+
+/* DROPPING ANIMATION */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(-65px);
+  transition: opacity .9s ease,
+              transform .9s cubic-bezier(.2,.8,.2,1);
+}
+
+.js .reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media(max-width:650px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  header h1 {
+    font-size: 22px;
+  }
+
+  .card {
+    padding: 18px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+@media print {
+  button {
+    display: none;
+  }
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+</style>
+
+<script>
+document.documentElement.classList.add("js");
+</script>
+</head>
+
+<body>
+
+<header class="reveal">
+<h1>RYDIA MOBILITY AND LOANS LTD</h1>
+<p>
+19 Alhaja Shifau Street, Dopemu Road, Lagos State.<br>
+Tel: 08144725052<br>
+Email: rydiamobilityloan@gmail.com
+</p>
+<span class="badge">18+ ONLY</span>
+<span class="badge">20 WORKING DAYS</span>
+<span class="badge">NIN VERIFICATION</span>
+</header>
+
+<div class="container">
+
+<!-- LOAN CALCULATOR -->
+<div class="card reveal">
+<h2>1. Loan Calculator</h2>
+
+<div class="grid">
+<div>
+<label>Loan Amount (NGN)</label>
+<input type="number" id="amount" value="100000">
+</div>
+
+<div>
+<label>Interest Rate (%)</label>
+<input type="number" id="rate" value="20">
+</div>
+</div>
+
+<button onclick="calcDaily()">Calculate Loan</button>
+<div class="result" id="calcResult"></div>
+</div>
+
+<!-- ELIGIBILITY -->
+<div class="card reveal">
+<h2>2. Eligibility Check</h2>
+
+<div class="grid">
+<div>
+<label>Date of Birth</label>
+<input type="date" id="eligDob">
+</div>
+
+<div>
+<label>Monthly Income</label>
+<input type="number" id="income">
+</div>
+
+<div>
+<label>Do you have a guarantor?</label>
+<select id="guarantorCheck">
+<option value="yes">Yes</option>
+<option value="no">No</option>
+</select>
+</div>
+
+<div>
+<label>Can you pay daily for 20 days?</label>
+<select id="dailyCheck">
+<option value="yes">Yes</option>
+<option value="no">No</option>
+</select>
+</div>
+</div>
+
+<button onclick="checkEligibility()">Check Eligibility</button>
+<div class="result" id="eligResult"></div>
+<div class="error" id="eligError"></div>
+</div>
+
+<!-- NIN VERIFICATION -->
+<div class="card reveal">
+<h2>3. NIN Verification Centre</h2>
+
+<p>Enter your National Identification Number to begin the verification process.</p>
+
+<div class="verify-box">
+
+<label>NIN - 11 Digits</label>
+
+<input
+type="password"
+id="ninInput"
+maxlength="11"
+inputmode="numeric"
+autocomplete="off"
+placeholder="Enter your 11-digit NIN"
+>
+
+<label>
+<input type="checkbox" id="showNin" style="width:auto">
+Show NIN
+</label>
+
+<div id="ninStatus" class="verify-status">
+Status: Waiting for NIN.
+</div>
+
+<button class="gold" onclick="checkNINFormat()">
+Check NIN
+</button>
+
+<button onclick="verifyOfficialNIN()">
+Verify NIN Officially
+</button>
+
+<p style="font-size:12px;margin-top:12px;color:#555">
+Format checking only confirms that the number contains 11 digits.
+Official verification requires an authorized NIMC verification service.
+</p>
+
+</div>
+
+<div class="verify-box">
+<h3>Official Verification Portal</h3>
+
+<p>Visit the official NIMC website for information about identity verification services.</p>
+
+<a href="https://nimc.gov.ng/" target="_blank" rel="noopener">
+<button type="button">Open NIMC Website</button>
+</a>
+
+</div>
+</div>
+
+<!-- BVN -->
+<div class="card reveal">
+<h2>4. BVN Format Check</h2>
+
+<label>BVN - 11 Digits</label>
+<input type="password" id="bvnInput" maxlength="11"
+inputmode="numeric" autocomplete="off">
+
+<label>
+<input type="checkbox" id="showBvn" style="width:auto">
+Show BVN
+</label>
+
+<div id="bvnStatus" class="verify-status">
+Status: Waiting for BVN.
+</div>
+
+<button class="gold" onclick="checkBVN()">Check BVN Format</button>
+
+<p style="font-size:12px;margin-top:10px">
+This only checks the number format. It does not verify BVN ownership.
+</p>
+</div>
+
+<!-- BORROWER APPLICATION -->
+<div class="card reveal">
+<h2>5. Borrower Application Form</h2>
+
+<form id="loanForm">
+
+<div class="grid">
+<div>
+<label>Full Name *</label>
+<input id="bName" required>
+</div>
+
+<div>
+<label>Phone *</label>
+<input id="bPhone" type="tel" required>
+</div>
+
+<div>
+<label>Email</label>
+<input id="bEmail" type="email">
+</div>
+
+<div>
+<label>Date of Birth *</label>
+<input id="bDob" type="date" required>
+</div>
+
+<div>
+<label>Residential Address</label>
+<input id="bAddress">
+</div>
+
+<div>
+<label>State / LGA</label>
+<input id="bState">
+</div>
+
+<div>
+<label>Employment</label>
+<select id="employ">
+<option>Employed</option>
+<option>Self-Employed</option>
+<option>Business Owner</option>
+</select>
+</div>
+
+<div>
+<label>Monthly Income</label>
+<input id="bIncome" type="number">
+</div>
+
+<div>
+<label>Loan Type</label>
+<select id="loanType">
+<option>Personal</option>
+<option>Mobility / Vehicle</option>
+<option>Business</option>
+<option>Emergency</option>
+</select>
+</div>
+
+<div>
+<label>Amount Requested</label>
+<input id="reqAmount" type="number">
+</div>
+
+<div>
+<label>Bank Name</label>
+<input id="bankName">
+</div>
+
+<div>
+<label>Account Number</label>
+<input id="acctNum" maxlength="10" inputmode="numeric">
+</div>
+</div>
+
+<label>Purpose of Loan</label>
+<textarea id="purpose" rows="3"></textarea>
+
+<label>
+<input type="checkbox" id="agree" required style="width:auto">
+I confirm I am 18+ and the information is correct.
+</label>
+
+<button type="submit">Submit Application</button>
+</form>
+
+<div id="successMsg" class="success">
+Your email application has been prepared.
+</div>
+
+<button class="whatsapp" onclick="sendWhatsApp()">
+Contact Us on WhatsApp
+</button>
+
+<p style="font-size:12px;margin-top:12px">
+Do not send NIN, BVN, OTPs or identity documents through ordinary email or WhatsApp. A secure backend is required for sensitive data.
+</p>
+</div>
+
+<!-- GUARANTOR -->
+<div class="card reveal">
+<h2>6. Guarantor Form</h2>
+
+<form id="guarantorForm">
+<div class="grid">
+
+<div>
+<label>Borrower Name *</label>
+<input id="gBorrower" required>
+</div>
+
+<div>
+<label>Guarantor Name *</label>
+<input id="gName" required>
+</div>
+
+<div>
+<label>Guarantor Phone *</label>
+<input id="gPhone" required>
+</div>
+
+<div>
+<label>Guarantor Date of Birth *</label>
+<input id="gDob" type="date" required>
+</div>
+
+<div>
+<label>Relationship</label>
+<input id="gRelationship">
+</div>
+
+<div>
+<label>Address</label>
+<input id="gAddress">
+</div>
+
+<div>
+<label>Amount Guaranteed</label>
+<input id="gAmount" type="number">
+</div>
+
+</div>
+
+<label>
+<input type="checkbox" required style="width:auto">
+I confirm I am 18+ and voluntarily agree to the guarantor terms.
+</label>
+
+<button type="submit">Submit Guarantor Form</button>
+</form>
+
+<div id="guarantorSuccess" class="success">
+Guarantor email prepared.
+</div>
+</div>
+
+<!-- RECEIPT -->
+<div class="card reveal">
+<h2>7. Daily Payment Receipt</h2>
+
+<div class="grid">
+<div>
+<label>Receipt Number</label>
+<input id="receiptNo" value="RYD-001">
+</div>
+
+<div>
+<label>Date</label>
+<input type="date" id="receiptDate">
+</div>
+
+<div>
+<label>Received From</label>
+<input id="receiptName">
+</div>
+
+<div>
+<label>Amount Paid</label>
+<input type="number" id="receiptAmt">
+</div>
+
+<div>
+<label>Day of 20</label>
+<input type="number" id="receiptDay" min="1" max="20" value="1">
+</div>
+
+<div>
+<label>Payment Method</label>
+<select id="receiptMode">
+<option>Cash</option>
+<option>Transfer</option>
+<option>POS</option>
+</select>
+</div>
+</div>
+
+<button onclick="updateReceipt()">Update Receipt</button>
+<button onclick="printReceipt()">Print Receipt</button>
+
+<div id="receiptPreview" style="border:1px dashed #0a3d62;padding:15px;margin-top:15px">
+<h3>RYDIA MOBILITY AND LOANS LTD</h3>
+<p id="rPreview">Receipt Preview</p>
+</div>
+</div>
+
+<!-- REPAYMENT -->
+<div class="card reveal">
+<h2>8. 20-Day Repayment Schedule</h2>
+
+<div class="grid">
+<div>
+<label>Loan Amount</label>
+<input type="number" id="schLoan" value="100000">
+</div>
+
+<div>
+<label>Interest (%)</label>
+<input type="number" id="schRate" value="20">
+</div>
+
+<div>
+<label>Start Date</label>
+<input type="date" id="schStart">
+</div>
+</div>
+
+<button onclick="genSchedule()">Generate Schedule</button>
+<div id="schedule"></div>
+
+<button onclick="window.print()">Print All Forms</button>
+</div>
+
+<!-- CONTACT -->
+<div class="card reveal">
+<h2>9. Contact Us</h2>
+
+<p><b>Phone:</b> 08144725052</p>
+<p><b>Email:</b> rydiamobilityloan@gmail.com</p>
+<p><b>Address:</b> 19 Alhaja Shifau Street, Dopemu Road, Lagos.</p>
+<p><b>Hours:</b> Monday - Saturday, 8am - 6pm</p>
+
+<button class="whatsapp" onclick="sendWhatsApp()">
+Chat on WhatsApp
+</button>
+</div>
+
+</div>
+
+<footer class="footer reveal">
+<h3 style="color:white">RYDIA MOBILITY AND LOANS LTD</h3>
+<p>18+ Only | Professional Loan Services</p>
+<p>08144725052</p>
+<p>rydiamobilityloan@gmail.com</p>
+<p>© 2026 Rydia Mobility and Loans Ltd</p>
+</footer>
+
+<script>
+
+/* SCROLL DROPPING ANIMATION */
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      entry.target.classList.add("show");
+      observer.unobserve(entry.target);
+    }
+  });
+}, {threshold:0.12});
+
+document.querySelectorAll(".reveal").forEach(el => {
+  observer.observe(el);
+});
+
+/* NIN SHOW/HIDE */
+
+showNin.addEventListener("change", function() {
+  ninInput.type = this.checked ? "text" : "password";
+});
+
+/* BVN SHOW/HIDE */
+
+showBvn.addEventListener("change", function() {
+  bvnInput.type = this.checked ? "text" : "password";
+});
+
+/* NIN INPUT */
+
+ninInput.addEventListener("input", function() {
+  this.value = this.value.replace(/\D/g,"").slice(0,11);
+  ninStatus.textContent = "Status: Number entered. Click Check NIN.";
+});
+
+function checkNINFormat() {
+  const value = ninInput.value.trim();
+
+  if(!/^[0-9]{11}$/.test(value)) {
+    ninInput.className = "invalid";
+    ninStatus.textContent = "Invalid format. NIN must have exactly 11 digits.";
+    return;
+  }
+
+  ninInput.className = "valid";
+  ninStatus.textContent =
+    "FORMAT VALID - 11 digits. Official identity verification is still pending.";
+}
+
+/* OFFICIAL NIN VERIFICATION */
+
+async function verifyOfficialNIN() {
+
+  const value = ninInput.value.trim();
+
+  if(!/^[0-9]{11}$/.test(value)) {
+    ninStatus.textContent = "Enter a valid 11-digit NIN first.";
+    return;
+  }
+
+  ninStatus.textContent =
+    "Official verification is not connected yet. An authorized verification API and secure server are required.";
+
+  /*
+    FUTURE SECURE API CONNECTION:
+
+    Send the NIN to your own protected backend.
+    Never put NIMC/API secrets in this HTML file.
+
+    Example backend endpoint:
+
+    POST /api/verify-nin
+
+    The backend must authenticate the business,
+    call the authorized identity provider,
+    and return a verified result only after
+    receiving an authoritative response.
+  */
+}
+
+/* BVN */
+
+bvnInput.addEventListener("input", function() {
+  this.value = this.value.replace(/\D/g,"").slice(0,11);
+});
+
+function checkBVN() {
+  const value = bvnInput.value.trim();
+
+  if(!/^[0-9]{11}$/.test(value)) {
+    bvnInput.className = "invalid";
+    bvnStatus.textContent = "BVN must contain exactly 11 digits.";
+  } else {
+    bvnInput.className = "valid";
+    bvnStatus.textContent =
+      "BVN FORMAT VALID. Ownership has not been verified.";
+  }
+}
+
+/* LOAN CALCULATOR */
+
+function calcDaily() {
+  const P = Number(amount.value);
+  const rate = Number(document.getElementById("rate").value);
+
+  if(!Number.isFinite(P) || !Number.isFinite(rate) || P <= 0 || rate < 0) {
+    calcResult.style.display = "block";
+    calcResult.textContent = "Enter valid loan details.";
+    return;
+  }
+
+  const interest = P * rate / 100;
+  const total = P + interest;
+  const daily = total / 20;
+
+  calcResult.style.display = "block";
+  calcResult.innerHTML = `
+  <p>Loan: NGN ${P.toLocaleString()}</p>
+  <p>Interest: NGN ${interest.toLocaleString()}</p>
+  <p>Total: NGN ${total.toLocaleString()}</p>
+  <h3>Daily Payment: NGN ${daily.toLocaleString(undefined,{maximumFractionDigits:2})}</h3>`;
+}
+
+calcDaily();
+
+/* AGE */
+
+function getAge(value) {
+  if(!value) return -1;
+
+  const dob = new Date(value + "T00:00:00");
+  const now = new Date();
+
+  if(isNaN(dob.getTime()) || dob > now) return -1;
+
+  let age = now.getFullYear() - dob.getFullYear();
+
+  if(now.getMonth() < dob.getMonth() ||
+  (now.getMonth() === dob.getMonth() &&
+  now.getDate() < dob.getDate())) age--;
+
+  return age;
+}
+
+/* ELIGIBILITY */
+
+function checkEligibility() {
+  const age = getAge(eligDob.value);
+
+  eligResult.style.display = "none";
+  eligError.style.display = "none";
+
+  if(age < 0) {
+    eligError.textContent = "Enter a valid date of birth.";
+    eligError.style.display = "block";
+    return;
+  }
+
+  if(age < 18) {
+    eligError.textContent = "You must be 18 or older.";
+    eligError.style.display = "block";
+    return;
+  }
+
+  let reasons = [];
+
+  if(Number(income.value) < 50000) reasons.push("Income below the stated threshold.");
+  if(guarantorCheck.value === "no") reasons.push("Guarantor required.");
+  if(dailyCheck.value === "no") reasons.push("Daily repayment ability required.");
+
+  eligResult.style.display = "block";
+
+  eligResult.textContent = reasons.length
+    ? "Requirements not met: " + reasons.join(" ")
+    : "Preliminary eligibility passed. Final approval requires affordability and verification checks.";
+}
+
+/* EMAIL */
+
+const EMAIL = "rydiamobilityloan@gmail.com";
+
+function buildEmail() {
+  return `
+RYDIA MOBILITY AND LOANS LTD - LOAN APPLICATION
+
+Name: ${bName.value}
+Phone: ${bPhone.value}
+Email: ${bEmail.value}
+DOB: ${bDob.value}
+Age: ${getAge(bDob.value)}
+Address: ${bAddress.value}
+State: ${bState.value}
+Employment: ${employ.value}
+Income: ${bIncome.value}
+Loan Type: ${loanType.value}
+Amount: ${reqAmount.value}
+Bank: ${bankName.value}
+Account: ${acctNum.value}
+Purpose: ${purpose.value}
+
+NIN and BVN are excluded for security.
+  `;
+}
+
+function sendEmail() {
+  if(!loanForm.reportValidity()) return;
+
+  if(getAge(bDob.value) < 18) {
+    alert("Applicant must be 18 or older.");
+    return;
+  }
+
+  window.location.href =
+    "mailto:" + EMAIL +
+    "?subject=" + encodeURIComponent("Loan Application - " + bName.value) +
+    "&body=" + encodeURIComponent(buildEmail());
+}
+
+loanForm.addEventListener("submit", function(e) {
+  e.preventDefault();
+  successMsg.style.display = "block";
+  sendEmail();
+});
+
+/* WHATSAPP */
+
+function sendWhatsApp() {
+  const message =
+    "Hello Rydia Mobility and Loans Ltd. I want to make a loan enquiry.";
+
+  window.open(
+    "https://wa.me/2348144725052?text=" +
+    encodeURIComponent(message),
+    "_blank"
+  );
+}
+
+/* GUARANTOR */
+
+guarantorForm.addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  if(getAge(gDob.value) < 18) {
+    alert("Guarantor must be at least 18.");
+    return;
+  }
+
+  const body = `
+GUARANTOR APPLICATION
+
+Borrower: ${gBorrower.value}
+Guarantor: ${gName.value}
+Phone: ${gPhone.value}
+DOB: ${gDob.value}
+Relationship: ${gRelationship.value}
+Address: ${gAddress.value}
+Amount: ${gAmount.value}
+`;
+
+  guarantorSuccess.style.display = "block";
+
+  window.location.href =
+    "mailto:" + EMAIL +
+    "?subject=" + encodeURIComponent("Guarantor Application") +
+    "&body=" + encodeURIComponent(body);
+});
+
+/* RECEIPT */
+
+function updateReceipt() {
+  rPreview.innerHTML = `
+  Receipt No: ${receiptNo.value}<br>
+  Date: ${receiptDate.value}<br>
+  Received From: ${receiptName.value}<br>
+  Amount Paid: NGN ${Number(receiptAmt.value || 0).toLocaleString()}<br>
+  Day: ${receiptDay.value} of 20<br>
+  Payment Mode: ${receiptMode.value}
+  `;
+}
+
+function printReceipt() {
+  updateReceipt();
+  const content = receiptPreview.innerHTML;
+  const win = window.open("", "_blank");
+
+  if(!win) {
+    alert("Allow pop-ups to print your receipt.");
+    return;
+  }
+
+  win.document.write(`
+    <html><head><title>Rydia Receipt</title></head>
+    <body style="font-family:Arial;padding:30px">
+    ${content}
+    <script>window.onload=()=>window.print();<\/script>
+    </body></html>
+  `);
+  win.document.close();
+}
+
+/* REPAYMENT SCHEDULE */
+
+function genSchedule() {
+  const P = Number(schLoan.value);
+  const rate = Number(schRate.value);
+
+  if(!Number.isFinite(P) || !Number.isFinite(rate) || P <= 0 || rate < 0) {
+    schedule.textContent = "Enter valid loan details.";
+    return;
+  }
+
+  const total = P + P * rate / 100;
+  const daily = total / 20;
+
+  let date = schStart.value
+    ? new Date(schStart.value + "T12:00:00")
+    : new Date();
+
+  let html = `
+  <table>
+  <tr><th>Day</th><th>Date</th><th>Payment (NGN)</th></tr>`;
+
+  for(let i = 1; i <= 20; i++) {
+
+    while(date.getDay() === 0 || date.getDay() === 6) {
+      date.setDate(date.getDate() + 1);
+    }
+
+    html += `
+    <tr>
+    <td>${i}</td>
+    <td>${date.toLocaleDateString()}</td>
+    <td>${daily.toLocaleString(undefined,{maximumFractionDigits:2})}</td>
+    </tr>`;
+
+    date.setDate(date.getDate() + 1);
+  }
+
+  html += "</table>";
+
+  schedule.innerHTML = html;
+}
+
+</script>
+
+</body>
+  </html>
+  
